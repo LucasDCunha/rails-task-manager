@@ -1,0 +1,14 @@
+<h1><%= @task.title %></h1>
+
+<p><%= @task.details %></p>
+
+<% a = "fa-square" %>
+<% b = "This task is not completed" %>
+<% a = "fa-check-square" if @task.completed %>
+<% b = "This task has been completed" if @task.completed %>
+
+<p><i class="fa <%= a %>"></i> <%= b %></p>
+
+<%= link_to "Edit task", edit_path(@task.id) %> <br> <br>
+<%= link_to "<i class='fa fa-undo'></i>  Go back".html_safe, root_path %>
+
