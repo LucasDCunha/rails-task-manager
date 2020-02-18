@@ -4,8 +4,8 @@
   <% @tasks.each do |task| %>
     <% a = "fa-square" %>
     <% a = "fa-check-square" if task.completed %>
-    <div class='list-group-item list-group-item-action'>
-      <%= link_to "<li style='display: inline-block'><i class='fa #{a}'></i> #{task.title} . </li>".html_safe, task_path(task) %>
+    <div class='list-group-item list-group-item-action d-flex justify-content-between'>
+      <%= link_to "<li style='display: inline-block'><i class='fa #{a}'></i> #{task.title}</li>".html_safe, task_path(task) %>
       <%= link_to "<i class='fa fa-trash text-danger'></i>".html_safe, delete_path(task),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
