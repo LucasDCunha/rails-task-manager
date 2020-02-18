@@ -14,5 +14,6 @@
 <% b = "This task has been completed" if @task.completed %>
 
 <p><i class="fa <%= a %>"></i> <%= b %></p>
-
-<%= link_to "<div class='btn btn-primary'><i class='fa fa-undo'></i> Go back</div>".html_safe, root_path %>
+<div class="pt-4 border-top mt-4">
+  <%= link_to "<div class='btn btn-primary'><i class='fa fa-undo'></i> Go back</div>".html_safe, root_path %>
+</div>

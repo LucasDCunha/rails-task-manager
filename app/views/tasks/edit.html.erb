@@ -1,5 +1,6 @@
 <h1>Edit Task</h1>
 
 <%= render 'form', task: @task %>
-
-<%= link_to "<div class='btn btn-primary'><i class='fa fa-undo'></i> Go back</div>".html_safe, task_path(@task.id)%>
+<div class="pt-4 border-top mt-4">
+  <%= link_to "<div class='btn btn-primary'><i class='fa fa-undo'></i> Go back</div>".html_safe, task_path(@task.id)%>
+</div>
