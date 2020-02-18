@@ -1,11 +1,18 @@
 <h1>Tasks</h1>
 
-<ul>
+<ul class="list-group">
   <% @tasks.each do |task| %>
     <% a = "fa-square" %>
     <% a = "fa-check-square" if task.completed %>
-    <li><%= link_to "<i class='fa #{a}'></i> #{task.title}".html_safe, task_path(task) %></li>
+    <div class='list-group-item list-group-item-action'>
+      <%= link_to "<li style='display: inline-block'><i class='fa #{a}'></i> #{task.title} . </li>".html_safe, task_path(task) %>
+      <%= link_to "<i class='fa fa-trash text-danger'></i>".html_safe, delete_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+    </div>
   <% end %>
 </ul>
 
-<%= link_to "<i class='fa fa-plus'></i> Create new task".html_safe, task_new_path %>
+<div style="margin-top: 16px">
+  <%= link_to "<div class='btn btn-primary'><i class='fa fa-plus'></i> Create new task</div>".html_safe, task_new_path %>
+</div>

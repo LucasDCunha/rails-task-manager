@@ -1,6 +1,12 @@
-<h1><%= @task.title %></h1>
-
-<p><%= @task.details %></p>
+<div class="nav justify-content-between align-center align-items-center">
+  <h1><%= @task.title %></h1>
+  <%= link_to "<div class='btn btn-secondary'>Edit task</div>".html_safe, edit_path(@task.id) %>
+</div>
+<div class="card mb-3">
+  <div class="card-body">
+    <%= @task.details %>
+  </div>
+</div>
 
 <% a = "fa-square" %>
 <% b = "This task is not completed" %>
@@ -9,6 +15,4 @@
 
 <p><i class="fa <%= a %>"></i> <%= b %></p>
 
-<%= link_to "Edit task", edit_path(@task.id) %> <br> <br>
-<%= link_to "<i class='fa fa-undo'></i>  Go back".html_safe, root_path %>
-
+<%= link_to "<div class='btn btn-primary'><i class='fa fa-undo'></i> Go back</div>".html_safe, root_path %>
